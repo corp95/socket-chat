@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>CRUD Xenoglosia USUARIOS</title>
+  </head>
+  <body style="background-color: #248df9;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand fuente" href="/panel" id="logo" style="color: #F8F9FA;">
+            Panel Administración de Xenoglosia
+          </a>
+          <div id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-uppercase fuente-fina" href="/panel" style="color: #F8F9FA; ">mensajes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase fuente-fina" href="/panel-Usuarios" style="color: #F8F9FA; ">usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-primary text-uppercase" href="/panel-Grupos" role="button">grupos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+      <h1>Grupos</h1>
+      <hr>
+      <table class="table table-hover  table-light table-bordered table-striped text-center">
+        <caption style="color:white">Antes de borrar cualquier grupo hay que borrar los mensajes asociados a él.</caption>
+          <thead>
+              <tr class="bg-secondary text-white">
+                  <th scope="col">Nombre</th>
+                  <th scope="col">ACCIONES</th>
+              </tr>
+              
+          </thead>
+          <tbody>
+          <% results.forEach((grupos) => { %>
+              <tr>
+                  <td><%= grupos.nombre %></td>
+                  <td>
+                    <a href="/deleteGrupos/<%= grupos.nombre %>" onclick="return confirm('¿Está seguro de borrar esta entrada?')" class="btn btn-outline-danger">borrar</a>
+                  </td>
+              </tr>
+          <% }) %>
+          </tbody>
+      </table>
+  </div>
+    <footer class="bg-primary text-center fuente">
+      <div class="container p-4 pb-0">
+        
+        <section class="mb-4">
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #4d4d4d;" target="_blank"
+            href="https://www.linkedin.com/in/daniel-santonja-gosálbez/" role="button">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+          <a class="btn btn-primary btn-floating" 
+          href="#logo" role="">
+          <ion-icon name="arrow-up-outline"></ion-icon>
+        </a>
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #4d4d4d;" target="_blank"
+            href="https://github.com/corp95" role="button">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+          
+        </section>
+      </div>
+      <div class="text-center text-white p-3" style="background-color: rgba(33, 37, 41, 10.0);">
+        © 2022 Copyright:
+        <a class="text-white" href="https://xenoglosia.com/">Xenoglosia.com</a>
+      </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

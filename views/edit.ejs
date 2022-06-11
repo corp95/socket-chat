@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>CRUD Xenoglosia</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand fuente" href="/panel" id="logo" style="color: #F8F9FA;">
+            Editando entrada
+          </a>
+          <div id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="btn btn-primary text-uppercase" href="/panel" role="button">mensajes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase fuente-fina" href="/panel-Usuarios" style="color: #F8F9FA; ">usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase fuente-fina" href="/panel-Grupos" style="color: #F8F9FA; ">grupos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <% if (mensajes) { %>
+    <div class="container mt-4">
+        <div class="card border-secondary">  
+            <div class="card-header">Editar nueva entrada</div>
+            <div class="card-body">
+                <form action="/update" method="POST">
+                    <input id="id" name="id" value="<%= mensajes.id %>" hidden>
+                    <div class="mb-3">
+                        <label for="mensajes" class="form-label">Texto</label>
+                        <input type="text" class="form-control" id="texto" name="texto" value="<%= mensajes.texto %>" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensajes" class="form-label">Iidoma</label>
+                        <select id="idioma" name="idioma" class="form-select" tabindex="2">
+                            <option <%=mensajes.idioma=='BG' ? "selected" : "" %> label="Búlgaro">BG</option>
+                            <option <%=mensajes.idioma=='CS' ? "selected" : "" %> label="Checo">CS</option>
+                            <option <%=mensajes.idioma=='DA' ? "selected" : "" %> label="Danés">DA</option>
+                            <option <%=mensajes.idioma=='DE' ? "selected" : "" %> label="Alemán">DE</option>
+                            <option <%=mensajes.idioma=='EL' ? "selected" : "" %> label="Griego">EL</option>
+                            <option <%=mensajes.idioma=='EN-GB' ? "selected" : "" %> label="Inglés Británico">EN-GB</option>
+                            <option <%=mensajes.idioma=='EN-US' ? "selected" : "" %> label="Inglés Americano">EN-US</option>
+                            <option <%=mensajes.idioma=='EN' ? "selected" : "" %> label="Inglés">EN</option>
+                            <option <%=mensajes.idioma=='ES' ? "selected" : "" %> label="Español">ES</option>
+                            <option <%=mensajes.idioma=='ET' ? "selected" : "" %> label="Estonio">ET</option>
+                            <option <%=mensajes.idioma=='FI' ? "selected" : "" %> label="Finés">FI</option>
+                            <option <%=mensajes.idioma=='FR' ? "selected" : "" %> label="Francés">FR</option>
+                            <option <%=mensajes.idioma=='HU' ? "selected" : "" %> label="Húngaro">HU</option>
+                            <option <%=mensajes.idioma=='IT' ? "selected" : "" %> label="Italiano">IT</option>
+                            <option <%=mensajes.idioma=='JA' ? "selected" : "" %> label="Japones">JA</option>
+                            <option <%=mensajes.idioma=='LT' ? "selected" : "" %> label="Lituano">LT</option>
+                            <option <%=mensajes.idioma=='LV' ? "selected" : "" %> label="Letón">LV</option>
+                            <option <%=mensajes.idioma=='NL' ? "selected" : "" %> label="Neerlandés">NL</option>
+                            <option <%=mensajes.idioma=='PL' ? "selected" : "" %> label="Polaco">PL</option>
+                            <option <%=mensajes.idioma=='PT-BR' ? "selected" : "" %> label="Portugués Brasil">PT-BR</option>
+                            <option <%=mensajes.idioma=='PT' ? "selected" : "" %> label="Portugués">PT</option>
+                            <option <%=mensajes.idioma=='RO' ? "selected" : "" %> label="Rumano">RO</option>
+                            <option <%=mensajes.idioma=='RU' ? "selected" : "" %> label="Ruso">RU</option>
+                            <option <%=mensajes.idioma=='SK' ? "selected" : "" %> label="Eslovaco">SK</option>
+                            <option <%=mensajes.idioma=='SL' ? "selected" : "" %> label="Esloveno">SL</option>
+                            <option <%=mensajes.idioma=='SV' ? "selected" : "" %> label="Sueco">SV</option>
+                            <option <%=mensajes.idioma=='ZH' ? "selected" : "" %> label="Chino">ZH</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensajes" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha" value="<%= mensajes.fecha %>" tabindex="3">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensajes" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario" value="<%= mensajes.usuario %>" tabindex="4">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensajes" class="form-label">Sala</label> 
+                        <select id="grupo" name="grupo" class="form-select" tabindex="5"> 
+                            <option <%=mensajes.grupo=='General' ? "selected" : "" %> value="General">General</option>
+                            <option <%=mensajes.grupo=='IG Formación' ? "selected" : "" %>  value="IG Formación">IG Formación</option>
+                            <option <%=mensajes.grupo=='Empresa 2' ? "selected" : "" %>  value="Empresa 2">Empresa 2</option>
+                            <option <%=mensajes.grupo=='Noticias' ? "selected" : "" %>  value="Noticias">Noticias</option>
+                            <option <%=mensajes.grupo=='Opinión' ? "selected" : "" %>  value="Opinión">Opinión</option>
+                        </select>
+                    </div>
+                    
+                            
+                    <button type="submit" class="btn btn-primary" tabindex="6">Guardar</button>
+                    <a href="/panel" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>        
+  </div>
+    <% } %>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

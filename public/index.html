@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/logo.png">
+    <title>Xenoglosia Chat Online</title>
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/pages/login-register-lock.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="card-no-border">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Chat...</p>
+        </div>
+    </div>
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(../assets/images/background/login-register.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material" id="loginform" action="chat.html">
+                        <h3 class="box-title m-b-20">Ingresar al Chat</h3>
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" required="" placeholder="Nombre de usuario" name="nombre"> </div>
+                        </div>
+
+                        <div class="form-check">
+                            <div class="col-xs-12">
+                                <h3 class="box-title m-b-20">Salas disponibles</h3>
+                                <div class="col-xs-12">
+                                    <select name="sala" class="form-select">
+                                        <option>General</option>
+                                        <option>IG Formación</option>
+                                        <option>Empresa 2</option>
+                                        <option>Noticias</option>
+                                        <option>Opinión</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        <br>
+                        <div class="form-check">
+                            <div class="col-xs-12" >
+                                <h3 class="box-title m-b-20">Escoja el idioma</h3>
+                                <div class="col-xs-12">
+                                    <select name="idioma" class="form-select">
+                                        <option label="Búlgaro">BG</option>
+                                        <option label="Checo">CS</option>
+                                        <option label="Danés">DA</option>
+                                        <option label="Alemán">DE</option>
+                                        <option label="Griego">EL</option>
+                                        <option label="Inglés Británico">EN-GB</option>
+                                        <option label="Inglés Americano">EN-US</option>
+                                        <option label="Inglés">EN</option>
+                                        <option label="Español" selected="selected">ES</option>
+                                        <option label="Estonio">ET</option>
+                                        <option label="Finés">FI</option>
+                                        <option label="Francés">FR</option>
+                                        <option label="Húngaro">HU</option>
+                                        <option label="Italiano">IT</option>
+                                        <option label="Japones">JA</option>
+                                        <option label="Lituano">LT</option>
+                                        <option label="Letón">LV</option>
+                                        <option label="Neerlandés">NL</option>
+                                        <option label="Polaco">PL</option>    
+                                        <option label="Portugués Brasil">PT-BR</option>
+                                        <option label="Portugués">PT</option>
+                                        <option label="Rumano">RO</option>
+                                        <option label="Ruso">RU</option>
+                                        <option label="Eslovaco">SK</option>
+                                        <option label="Esloveno">SL</option>
+                                        <option label="Sueco">SV</option>
+                                        <option label="Chino">ZH</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="col-xs-12 p-b-20">
+                                <hr>
+                                <button class="btn btn-block btn-info btn-rounded" type="submit">Ingresar al chat</button>
+                                <br>
+                                <p>o</p>
+                                <a  href="https://www.xenoglosia.com" type="button" class="btn btn-block  btn-info btn-rounded">Salir</a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".preloader").fadeOut();
+        });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
+
+</body>
+
+</html>

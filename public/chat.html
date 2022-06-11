@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xenoglosia Chat Online</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="css/pages/chat-app-page.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/chat.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+</head>
+
+<body class="fix-header single-column card-no-border fix-sidebar">
+
+    <div id="main-wrapper">
+        <div class="page-wrapper">
+
+            <div class="container-fluid">
+
+
+                <div class="row animated fadeIn">
+                    <div class="col-12">
+                        <div class="card m-b-0">
+                            <div class="chat-main-box">
+                                <div class="chat-left-aside">
+                                    <div class="chat-left-inner">
+                                        <div class="form-material">
+                                            <a class="btn btn-info" href="./index.html" role="button" style="border-radius: 30px; margin-left: 1rem; margin-top: 1rem; margin-bottom: 1rem;">Salir</a>
+                                        </div>
+                                        <ul class="chatonline style-none" id="divUsuarios">
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="chat-right-aside">
+                                    <div class="chat-main-header">
+                                        <div class="p-20 b-b" id>
+                                            <h3><img src="./assets/images/xenoglosia/logo.png" alt="" style="width: 5%;">
+                                            Xenoglosia Chat Online</h3>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-rbox">
+                                        <ul class="chat-list p-20" id="divChatbox">
+                                            
+
+                                        </ul>
+                                    </div>
+                                    <div class="card-body b-t">
+                                        <form id="formEnviar">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <input autocomplete="off" id="txtMensaje" placeholder="Escribe tu mensaje aquí" class="form-control b-0" autofocus>
+                                                </div>
+                                                <div class="col-4 text-right">
+                                                    <button  type="submit" class="btn btn-info btn-circle btn-lg"><i class="fa fa-paper-plane-o"></i> </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="fuente-fina">Powered by: 
+                    <img src="./assets/images/xenoglosia/deepL-logo.png" width="100" height="40">
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <br>
+                <a href="./index.html" class="btn btn-info" role="button" style="border-radius: 30px;">Salir</a>
+            </div>
+            <div class="d-flex justify-content-center" style="margin-top: 2rem;">
+                 © 2022 Copyright: 
+                    <a href="https://xenoglosia.com" class="text-secondary"> Xenoglosia.com</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/socket-chat-jquery.js"></script>
+    <script src="js/socket-chat.js"></script>
+</body>
+
+</html>
